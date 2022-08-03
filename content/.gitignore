@@ -1,0 +1,5 @@
+!.gitignore
+!content.json
+
+# Igonre all sub directories
+*/
