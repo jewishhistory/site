@@ -1,5 +1,19 @@
 const path = require('path');
 const spawn = require('cross-spawn');
+const clc = require('cli-color');
+
+LOGGER_COLORS = {
+  info: clc.yellowBright.bold,
+};
+
+const logger = require('console-log-level')({
+  prefix(level) {
+    const date = new Date();
+    return LOGGER_COLORS[level](
+      `[${level.toUpperCase()}][${date.toISOString()}]`
+    );
+  },
+});
 
 module.exports.fetchContent = ({ repository, folder }) => {
   const contentPath = path.resolve(process.cwd(), folder);
@@ -19,4 +33,11 @@ module.exports.fetchContent = ({ repository, folder }) => {
   } catch (e) {
     throw new Error('The content are not fetched');
   }
+};
+
+module.exports.getLogger = () => {
+  return {
+    clear: () => process.stdout.write(clc.reset),
+    info: (msg) => logger.info(LOGGER_COLORS.info(msg)),
+  };
 };
