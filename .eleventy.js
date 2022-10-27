@@ -1,3 +1,3 @@
 module.exports = (config) => {
-  config.addPassthroughCopy('src/styles');
+  // config.addPassthroughCopy('src/styles');
 };

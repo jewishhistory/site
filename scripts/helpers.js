@@ -2,8 +2,10 @@ const path = require('path');
 const spawn = require('cross-spawn');
 const clc = require('cli-color');
 
-LOGGER_COLORS = {
-  info: clc.yellowBright.bold,
+const LOGGER_COLORS = {
+  info: clc.cyanBright.bold,
+  error: clc.redBright.bold,
+  warn: clc.yellowBright.bold,
 };
 
 const logger = require('console-log-level')({
@@ -39,5 +41,7 @@ module.exports.getLogger = () => {
   return {
     clear: () => process.stdout.write(clc.reset),
     info: (msg) => logger.info(LOGGER_COLORS.info(msg)),
+    error: (msg) => logger.error(LOGGER_COLORS.error(msg)),
+    warn: (msg) => logger.warn(LOGGER_COLORS.warn(msg)),
   };
 };
