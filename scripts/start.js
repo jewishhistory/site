@@ -51,7 +51,7 @@ const webpackCompiler = webpack({ mode: 'development', ...webpackConfig });
 
   // Генерируем статику
   const elev = new Eleventy(folder);
-  await elev.write();
+  await elev.watch();
   logger.info('The site is assembled');
 
   // Запускаем сервер для разработки
