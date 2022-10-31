@@ -1,6 +1,26 @@
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: calc(18px + 0.15vw);
+  font-size: calc(16px + 0.15vw);
   line-height: 1.3em;
-  background: #eceff1;
+  color: var(--color-text);
+}
+
+a:not([class]) {
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(--color-primary-light);
+  text-decoration-color: var(--color-primary-light);
+  text-decoration-thickness: .05em;
+  text-underline-offset: .15em;
+  transition: color .3s, -webkit-text-decoration-color .3s;
+  transition: color .3s, text-decoration-color .3s;
+  transition: color .3s, text-decoration-color .3s, -webkit-text-decoration-color .3s;
+  color: var(--color-primary);
+}
+
+a:not([class]):hover {
+  -webkit-text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+  color: var(--color-accent);
 }

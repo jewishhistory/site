@@ -10,12 +10,9 @@
 </head>
 <body>
   <header class="header">
-    <a class="header__logo" href="/">
-      <img src="/assets/pictures/jewishhistory_logo.svg" alt="Jewish history" width="300">
-    </a>
     <nav class="header__navigation">
       <ul class="menu">
-        <li class="menu__item">
+        <li class="menu__item menu__item_active">
           <a class="menu__link" href="#">Статьи</a>
         </li>
         <li class="menu__item">
@@ -24,8 +21,19 @@
         <li class="menu__item">
           <a class="menu__link" href="#">Авторы</a>
         </li>
+        <li class="menu__item menu__item_last">
+          <a class="menu__link" href="#">О проекте</a>
+        </li>
+        <li>
+          <a class="button" href="#">Разместить статью</a>
+        </li>
       </ul>
     </nav>
+    <div class="header__content">
+      <a class="header__logo" href="/">
+        <img src="/assets/pictures/jewishhistory_logo.svg" alt="Jewish history" width="300">
+      </a>
+    </div>
   </header>
   <div>{{ content | safe }}</div>
 </body>
