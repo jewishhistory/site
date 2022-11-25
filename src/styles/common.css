@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,11 +16,12 @@ a:not([class]) {
   text-decoration: underline;
   -webkit-text-decoration-color: var(--color-primary-light);
   text-decoration-color: var(--color-primary-light);
-  text-decoration-thickness: .05em;
-  text-underline-offset: .15em;
-  transition: color .3s, -webkit-text-decoration-color .3s;
-  transition: color .3s, text-decoration-color .3s;
-  transition: color .3s, text-decoration-color .3s, -webkit-text-decoration-color .3s;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.15em;
+  transition: color 0.3s, -webkit-text-decoration-color 0.3s;
+  transition: color 0.3s, text-decoration-color 0.3s;
+  transition: color 0.3s, text-decoration-color 0.3s,
+    -webkit-text-decoration-color 0.3s;
   color: var(--color-primary);
 }
 
